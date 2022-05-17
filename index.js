@@ -1,4 +1,6 @@
 'use strict'
+
+// Print Loading
 console.log("Extensão em atividade!")
 
 function init() {
