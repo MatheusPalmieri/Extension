@@ -1,6 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Sienge AutoCheck",
+    "description": "Extension made for sienge!",
     "version": "1.0.0",
     "content_scripts": [
         {
