@@ -4,10 +4,12 @@
 console.log("Extensão em atividade!")
 
 function init() {
-    var container = document.querySelector(".container")
+    console.log("hit")
+    var container = document.querySelector("#root > main")
 
     container.insertAdjacentHTML(
-        'beforebegin',
+        // container.appendChild(
+        'afterbegin',
         `
             <div class="selector">
                 <select name="setor" class="setor" id="setor">
@@ -16,20 +18,16 @@ function init() {
                     <option value="engenharia">engenharia</option>
                 </select>
 
-                <input type="submit" id="btn" class="btn">
+                <input type="submit" id="buttonInjectedByIT" class="btn">
             </div>
         `
     )
+    var btn = document.getElementById('buttonInjectedByIT')
+    btn.addEventListener('click', activeCheckbox)
 }
 
-init()
+setTimeout(init, 6000)
 
-var input = document.querySelectorAll('input[type = "checkbox"]')
-
-var btn = document.getElementById('btn')
-    btn.addEventListener('click', function(){
-        activeCheckbox()
-    })
 
 
 function getSetor() {
@@ -59,6 +57,7 @@ function getSetor() {
 }  
 
 function activeCheckbox() {
+    var input = document.querySelectorAll('#tabelaRowRegistroAuditGrid > tbody > #linhaRowRegistroAuditGrid_0 > td:last-child')
     getSetor().forEach(function(element, index, array){
         
         console.log("a[" + index + "] = " + element);
